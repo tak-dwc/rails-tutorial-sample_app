@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>
+    <% unless current_page?(root_path)%>
+      <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>
+    <% else %>
+      <title>Ruby on Rails Tutorial Sample App</title>
+    <% end %>
+    
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
